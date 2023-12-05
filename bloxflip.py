@@ -17,12 +17,13 @@ while True:
     if ra['active'] == True:
         host = ra['host']
         prize = ra['prize']
-        embed = Embed(color=0x0025ff, timestamp='now')
+        embed = Embed(description="[join rain](https://bloxflip.com)",
+                      color=0x0025ff,
+                      timestamp='now')
         embed.set_author(name=f'{host} hosted a rain!!', icon_url=image1)
         embed.add_field(name='Rain!', value=f'Active Rain ${prize}\n[join rain](https://bloxflip.com)')
-        embed.set_timestamp()
-        webhook.send("@bloxflip")
-        #webhook.send(embed=em)
+        webhook.send(f"<@&1181379945390407791>{prize}")
+        webhook.send(embed=embed)
 
 
 
@@ -32,16 +33,4 @@ while True:
 
 
     else:
-        prize = ra['prize']
-        embed = Embed(description="[join rain](https://bloxflip.com)",
-                      color=0x0025ff,
-                      timestamp='now')
-        embed.set_author(name=f' hosted a rain!!', icon_url=image1)
-        embed.add_field(name='Rain!', value=f'Active Rain ${prize}')
-        webhook.send(f"<@&1181379945390407791>{prize}")
-        webhook.send(embed=embed)
-
-
         time.sleep(3)
-
-
